@@ -11,3 +11,7 @@ function dividir (a, b){
     }
     
 }
+
+
+console.log(dividir(10, 2)); 
+console.log(dividir(8, 0));
