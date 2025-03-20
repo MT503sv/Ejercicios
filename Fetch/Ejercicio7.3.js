@@ -5,8 +5,14 @@ async function obtenerUsuarios() {
             throw new Error(`Error HTTP: ${response.status}`);
         }
         const data = await response.json();
-        data.forEach(user => console.log(user.name));
-    }catch (error){
+        const listaUsuarios = document.getElementById("js7.3");
+
+        data.forEach(user => {
+            const li = document.createElement("li");
+            li.textContent = user.name;
+            listaUsuarios.appendChild(li);
+        });
+    } catch (error) {
         console.error("Error al obtener datos", error.message);
     }
 }
